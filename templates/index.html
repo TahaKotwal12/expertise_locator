@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise Locator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expertise Locator</h1>
+            <p>Find the right expertise in your organization</p>
+        </header>
+        
+        <main>
+            <section class="upload-section">
+                <h2>Upload Resume</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="resumeFile" accept=".pdf,.docx" required>
+                        <label for="resumeFile">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Choose a file</span>
+                        </label>
+                    </div>
+                    <button type="submit">Upload</button>
+                </form>
+                <p id="uploadMessage"></p>
+                <div class="upload-animation">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </section>
+
+            <section class="search-section">
+                <h2>Search for Expertise</h2>
+                <div class="search-wrapper">
+                    <input type="text" id="searchQuery" placeholder="Enter skills or expertise">
+                    <button id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="searchResults"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
